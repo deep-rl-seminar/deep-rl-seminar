@@ -1,0 +1,29 @@
+2c2
+< import gym
+---
+> import gym, gym.spaces
+16a17,28
+> class DiscreteOneHotWrapper(gym.ObservationWrapper):
+>     def __init__(self, env):
+>         super(DiscreteOneHotWrapper, self).__init__(env)
+>         assert isinstance(env.observation_space, gym.spaces.Discrete)
+>         self.observation_space = gym.spaces.Box(0.0, 1.0, (env.observation_space.n, ), dtype=np.float32)
+> 
+>     def observation(self, observation):
+>         res = np.copy(self.observation_space.low)
+>         res[observation] = 1.0
+>         return res
+> 
+> 
+78c90
+<     env = gym.make("CartPole-v0")
+---
+>     env = DiscreteOneHotWrapper(gym.make("FrozenLake-v0"))
+86c98
+<     writer = SummaryWriter(comment="-cartpole")
+---
+>     writer = SummaryWriter(comment="-frozenlake-naive")
+100c112
+<         if reward_m > 199:
+---
+>         if reward_m > 0.8:
