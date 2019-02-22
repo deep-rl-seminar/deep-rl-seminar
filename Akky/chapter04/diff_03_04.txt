@@ -1,0 +1,13 @@
+4a5,6
+> import gym.wrappers
+> import gym.envs.toy_text.frozen_lake
+92c94,96
+<     env = DiscreteOneHotWrapper(gym.make("FrozenLake-v0"))
+---
+>     env = gym.envs.toy_text.frozen_lake.FrozenLakeEnv(is_slippery=False)
+>     env = gym.wrappers.TimeLimit(env, max_episode_steps=100)
+>     env = DiscreteOneHotWrapper(env)
+100c104
+<     writer = SummaryWriter(comment="-frozenlake-tweaked")
+---
+>     writer = SummaryWriter(comment="-frozenlake-nonslippery")
