@@ -1,0 +1,45 @@
+python3 prio_buffer_bench.py 
+Benchmarking PrioReplayBufferList
+  Test size 1000
+  * Initial fill:	195003.92 items/s
+  * Append:		254641.74 items/s
+  * Sample 4:		15787.93 items/s
+  * Sample 8:		15669.33 items/s
+  * Sample 16:		15536.06 items/s
+  * Sample 32:		14894.20 items/s
+  Test size 10000
+  * Initial fill:	171281.99 items/s
+  * Append:		188923.05 items/s
+  * Sample 4:		4757.52 items/s
+  * Sample 8:		4827.05 items/s
+  * Sample 16:		4692.37 items/s
+  * Sample 32:		4668.20 items/s
+  Test size 100000
+  * Initial fill:	56748.05 items/s
+  * Append:		58720.28 items/s
+  * Sample 4:		615.10 items/s
+  * Sample 8:		616.68 items/s
+  * Sample 16:		586.15 items/s
+  * Sample 32:		595.63 items/s
+Benchmarking PrioReplayBufferDeque
+  Test size 1000
+  * Initial fill:	102483.71 items/s
+  * Append:		94754.88 items/s
+  * Sample 4:		9915.83 items/s
+  * Sample 8:		9999.90 items/s
+  * Sample 16:		10038.31 items/s
+  * Sample 32:		9633.60 items/s
+  Test size 10000
+  * Initial fill:	12223.80 items/s
+  * Append:		12054.03 items/s
+  * Sample 4:		1974.88 items/s
+  * Sample 8:		1992.61 items/s
+  * Sample 16:		1965.79 items/s
+  * Sample 32:		1944.76 items/s
+  Test size 100000
+  * Initial fill:	1261.77 items/s
+  * Append:		1018.96 items/s
+  * Sample 4:		213.88 items/s
+  * Sample 8:		214.70 items/s
+  * Sample 16:		211.61 items/s
+  * Sample 32:		210.89 items/s
